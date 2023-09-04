@@ -1,3 +1,2 @@
 #!/bin/bash
-echo $PYCODE > file.py
-python3 file.py
+echo $PYCODE > file.py ; python3 file.py
