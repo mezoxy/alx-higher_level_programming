@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 import sys
-str = "and that piece of art is useful - Dora Korpar, 2015-10-19"
-sys.stdout.write(str + "\n")
+sys.stdout.write("and that piece of art is useful - Dora Korpar, 2015-10-19" + "\n")
 sys.exit(1)
