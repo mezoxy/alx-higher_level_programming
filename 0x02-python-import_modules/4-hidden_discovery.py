@@ -2,4 +2,8 @@
 import hidden_4
 import sys
 if __name__ == '__main__':
-    print(sorted(i for i in dir(hidden_4) if i[0] != "_" and i[1] != "_"))
+    x = dir(hidden_4)
+    y = sorted(x)
+    for i in y:
+        if i[0] != "_" and i[1] != "_":
+            print("{}".format(i))
