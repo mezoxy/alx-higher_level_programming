@@ -1,4 +1,4 @@
-#!/usr/bin/pytho3
+#!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     if matrix == [[]]:
         print("{}".format(""))
