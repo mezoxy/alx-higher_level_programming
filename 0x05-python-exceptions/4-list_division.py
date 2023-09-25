@@ -2,6 +2,8 @@
 def list_division(my_list_1, my_list_2, list_length):
     try:
         a = [0 for i in range(list_length)]
+        if not my_list_1 or my_list_2:
+            return a
         for i in range(list_length):
             if isinstance(my_list_1[i], (int, float)) and isinstance(my_list_2[i], (int, float)):
                 if my_list_2[i] != 0:
@@ -18,9 +20,4 @@ def list_division(my_list_1, my_list_2, list_length):
         if IndexError:
             print("out of range")
     finally:
-        if not my_list_1:
-            return a
-        if not my_list_2:
-            return a
-        else:
-            return a
+        return a
