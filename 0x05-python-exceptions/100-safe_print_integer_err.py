@@ -7,6 +7,6 @@ def safe_print_integer_err(value):
         print("{:d}".format(value))
         return True
     except (ValueError, TypeError):
-        error_message = f"Exception: Cannot print '{value}' as an integer"
+        error_message = f"Exception: Unknown format code 'd' for object of type '{type(value).__name__}'"
         sys.stderr.write(error_message + "\n")
         return False
