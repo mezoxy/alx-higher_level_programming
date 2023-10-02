@@ -40,6 +40,7 @@ class Rectangle:
             return 0
         return (self.__width + self.__height) * 2
 
+    """Special method __str__"""
     def __str__(self):
         obj = ""
         for i in range(self.__height):
