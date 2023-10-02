@@ -79,8 +79,8 @@ class Rectangle:
     """A classmethod"""
     @classmethod
     def square(cls, size=0):
-    """returns a new Rectangle instance
+        """returns a new Rectangle instance
     args:
         size(int): dimension
-    """
+        """
         return cls(size, size)
