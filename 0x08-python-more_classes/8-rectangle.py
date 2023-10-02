@@ -52,7 +52,7 @@ class Rectangle:
             return obj
         for i in range(self.__height):
             for j in range(self.__width):
-                obj += self.print_symbol
+                obj += str(self.print_symbol)
             if i == self.__height - 1:
                 obj += ""
             else:
@@ -65,3 +65,15 @@ class Rectangle:
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not type(rect_1) is Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not type(rect_2) is Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_2.area() > rect_1.area():
+            return rect_2.area()
+        elif rect_2.area() < rect_1.area():
+            return rect_1.area()
+        return rect_1.area()
