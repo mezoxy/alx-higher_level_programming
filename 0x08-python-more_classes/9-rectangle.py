@@ -83,4 +83,4 @@ class Rectangle:
     args:
         size(int): dimension
         """
-        return cls(size, size)
+        return Rectangle(size, size)
