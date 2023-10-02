@@ -43,6 +43,8 @@ class Rectangle:
     """Special method __str__"""
     def __str__(self):
         obj = ""
+        if self.__width == 0 or self.__height == 0:
+            return obj
         for i in range(self.__height):
             for j in range(self.__width):
                 obj += "#"
