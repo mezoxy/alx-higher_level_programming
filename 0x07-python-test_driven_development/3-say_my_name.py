@@ -3,8 +3,8 @@
 
 
 def say_my_name(first_name, last_name=""):
-    """say_my_name  a function that prints My name is <first name> <last name>.
-    Args: 
+    """say_my_name a function that prints full name.
+    Args:
         first_name (str): A string
         last_name (str): A string
     """

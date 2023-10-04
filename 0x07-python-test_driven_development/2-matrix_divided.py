@@ -29,4 +29,3 @@ def matrix_divided(matrix, div):
                 small_matrix.append(round(j / div, 2))
         big_matrix.append(small_matrix)
     return big_matrix
-print(matrix_divided([[float('inf'), float('inf'), float('inf')], [float('inf'), float('inf'), float('inf')]], 1e100))

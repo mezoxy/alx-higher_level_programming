@@ -7,8 +7,10 @@ returns: a + b
 
 
 def add_integer(a, b=98):
-    """
-    hi aboud
+    """add_integer.
+    Args:
+        a (int, float):
+        b (int, float):
     """
 
     if not type(a) in [int, float]:
