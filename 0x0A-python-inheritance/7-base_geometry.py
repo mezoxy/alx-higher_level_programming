@@ -20,3 +20,7 @@ class BaseGeometry(list):
             raise TypeError("{} must be an integer".format(self.name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(self.name))
+
+
+bg = BaseGeometry()
+bg.integer_validator("my_int", 12.4)
