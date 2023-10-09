@@ -32,3 +32,11 @@ ValueError: my_int must be greater than 0
 Traceback (most recent call last):
   ...
 TypeError: my_int must be an integer
+>>> bg.integer_validator(None, None)
+Traceback (most recent call last):
+  ...
+TypeError: None must be an integer
+>>> bg.integer_validator("my_int", None)
+Traceback (most recent call last):
+  ...
+TypeError: my_int must be an integer
