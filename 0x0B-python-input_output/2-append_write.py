@@ -4,7 +4,7 @@
 
 def append_write(filename="", text=""):
     """append_write:
-    A unction that appends a string at the end of a text file 
+    A unction that appends a string at the end of a text file
 
     Args:
         filename: The path name or name of the file
