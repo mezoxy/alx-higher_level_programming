@@ -60,3 +60,7 @@ TypeError: my_int must be an integer
 Traceback (most recent call last):
   ...
 TypeError: my_int must be an integer
+>>> bg.integer_validator("my_int", {1: 6, 3: "hi"})
+Traceback (most recent call last):
+  ...
+TypeError: my_int must be an integer
