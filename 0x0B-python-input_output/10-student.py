@@ -18,11 +18,7 @@ class Student:
         d = {}
         if type(attrs) is list:
             for i in attrs:
-                if i == "first_name":
-                    d["first_name"] = self.first_name
-                if i == "last_name":
-                    d["last_name"] = self.last_name
-                if i == "age":
-                    d["age"] = self.age
+                if hasattr(self, i):
+                    d[i] = getattr(self, i)
             return d
         return self.__dict__
