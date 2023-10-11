@@ -4,4 +4,4 @@
 import json
 
 def class_to_json(obj):
-    return json.dumps(obj)
+    return obj.__dict__
