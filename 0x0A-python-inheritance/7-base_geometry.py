@@ -2,7 +2,7 @@
 """The module: 6-base_geometry"""
 
 
-class BaseGeometry(list):
+class BaseGeometry:
     """An instance method"""
     def area(self):
         raise Exception("area() is not implemented")
