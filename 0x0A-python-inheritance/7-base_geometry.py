@@ -9,6 +9,7 @@ class BaseGeometry(list):
 
     """Public method that validate value"""
     def integer_validator(self, name, value):
+        """integer_validator: That validate the value"""
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
