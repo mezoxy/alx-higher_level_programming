@@ -27,4 +27,4 @@ class Student:
     def reload_from_json(self, json):
         for att in list(json):
             if hasattr(self, att):
-                self.att = json[att]
+                setattr(self, att, json[att])
