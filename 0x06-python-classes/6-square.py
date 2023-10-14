@@ -39,7 +39,6 @@ class Square:
         b = ""
         if self.__size == 0:
             print()
-        print()
         for i in range(self.__size):
             for j in range(self.__size + a):
                 if j in range(a):
