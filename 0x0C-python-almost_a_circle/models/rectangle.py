@@ -88,9 +88,8 @@ class Rectangle(Base):
     """The magic method __str__"""
     def __str__(self):
         """Magic method"""
-
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                    self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height)
 
     """Public method"""
     def update(self, *args, **kwargs):
