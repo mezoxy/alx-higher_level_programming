@@ -12,14 +12,16 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        Base.__init__(self, id)
+        super().__init__(id)
 
     @property
     def width(self):
+        """Getter for width"""
         return self.__width
 
     @width.setter
     def width(self, width):
+        """Setterfor width"""
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -28,10 +30,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Getter for height"""
         return self.__height
 
     @height.setter
     def height(self, height):
+        """Setter for height"""
         if type(height) is not int:
             raise TypeError("height must be an integer")
         if height <= 0:
@@ -40,10 +44,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Getter for x"""
         return self.__x
 
     @x.setter
     def x(self, x):
+        """Setter method for x"""
         if type(x) is not int:
             raise TypeError("x must be an integer")
         if x < 0:
@@ -52,10 +58,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Getter for y"""
         return self.__y
 
     @y.setter
     def y(self, y):
+        """Setter method for y"""
         if type(y) is not int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -68,6 +76,7 @@ class Rectangle(Base):
 
     """Public Method: Display"""
     def display(self):
+        """display"""
         print("\n" * self.__y, end="")
         for i in range(self.__height):
             print(" " * self.__x, end="")
@@ -75,11 +84,16 @@ class Rectangle(Base):
 
     """The magic method __str__"""
     def __str__(self):
+        """Magic method"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                     self.__x, self.__y, self.__width, self.__height)
 
-    """Public method that assigns an argument to each attribute"""
+    """Public method"""
     def update(self, *args, **kwargs):
+        """update: method that assigns an argument to each attribute
+            Args:
+                args and kwargs
+        """
         lis = ["id", "width", "height", "x", "y"]
         if args:
             i = 0
@@ -93,5 +107,7 @@ class Rectangle(Base):
 
     """Public Method"""
     def to_dictionary(self):
+        """to_dictionary: A public meyhod that
+            returns a dictionary of an object"""
         return {'id': self.id, 'width': self.__width,
                 'height': self.__height, 'x': self.__x, 'y': self.__y}

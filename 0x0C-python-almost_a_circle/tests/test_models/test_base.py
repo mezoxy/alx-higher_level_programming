@@ -66,6 +66,12 @@ class BaseTest1(unittest.TestCase):
 
         s5 = Square(5, 24)
         self.assertEqual(s5.id, 4)
+    
+    def test_id_att(self):
+        s1 = Square(5)
+        s1.id = -4
+        s3 = Square(5, 2, 4)
+        self.assertEqual(s3.id, 2)
 
     def test_priv_atr(self):
         obj = Base()
@@ -99,6 +105,31 @@ class BaseTest1(unittest.TestCase):
             resu1 = '{"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]'
             self.assertEqual(js_rep, resu + resu1)
 
+    def test_to_json_string_rectangle_type(self):
+        r = Rectangle(10, 7, 2, 8, 6)
+        self.assertEqual(str, type(Base.to_json_string([r.to_dictionary()])))
+
+    def test_to_json_string_square_type(self):
+        s = Square(10, 2, 3, 4)
+        self.assertEqual(str, type(Base.to_json_string([s.to_dictionary()])))
+
+    def test_to_json_string_rectangle_two_dicts(self):
+        r1 = Rectangle(2, 3, 5, 19, 2)
+        r2 = Rectangle(4, 2, 4, 1, 12)
+        list_dicts = [r1.to_dictionary(), r2.to_dictionary()]
+        self.assertTrue(len(Base.to_json_string(list_dicts)) == 106)
+
+    def test_to_json_string_none(self):
+        self.assertEqual("[]", Base.to_json_string(None))
+
+    def test_to_json_string_empty_list(self):
+        self.assertEqual("[]", Base.to_json_string([]))
+
+    def test_to_json_string_square_two_dicts(self):
+        s1 = Square(10, 2, 3, 4)
+        s2 = Square(4, 5, 21, 2)
+        list_dicts = [s1.to_dictionary(), s2.to_dictionary()]
+        self.assertTrue(len(Base.to_json_string(list_dicts)) == 78)
 
 if __name__ == "__main__":
     unittest.main()
