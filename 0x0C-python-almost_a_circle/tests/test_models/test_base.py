@@ -131,5 +131,9 @@ class BaseTest1(unittest.TestCase):
         list_dicts = [s1.to_dictionary(), s2.to_dictionary()]
         self.assertTrue(len(Base.to_json_string(list_dicts)) == 78)
 
+    def test_save_to(self):
+        pass
+
+
 if __name__ == "__main__":
     unittest.main()

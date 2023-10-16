@@ -38,14 +38,31 @@ class Base:
             rep_json = []
             if list_objs is None:
                 fl.write("[]")
-            for obj in list_objs:
-                rep_json.append(obj.to_dictionary())
-            fl.write(cls.to_json_string(rep_json))
+            else:
+                for obj in list_objs:
+                    rep_json.append(obj.to_dictionary())
+                fl.write(cls.to_json_string(rep_json))
 
     @classmethod
     def create(cls, **dictionary):
-        if cls.__name__ == "Rectangle":
-            dummy = cls(1, 2)
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                dummy = cls(1, 2)
         else:
             dummy = cls(1)
         return dummy.update(**dictionary)
+
+    @classmethod
+    def load_from_file(cls):
+        """Return a list of classes instantiated from a file of JSON strings.
+        Return:
+            If the file does not exist - an empty list.
+            list of instantiated classes.
+        """
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, "r") as jsonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []

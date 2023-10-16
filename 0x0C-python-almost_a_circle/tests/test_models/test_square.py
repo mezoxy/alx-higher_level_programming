@@ -14,6 +14,7 @@ class BaseTest1(unittest.TestCase):
         Base._Base__nb_objects = 0
     
     def test_id_squa(self):
+        """Method Tast for id"""
         s1 = Square(5)
         self.assertEqual(s1.id, 1)
 
