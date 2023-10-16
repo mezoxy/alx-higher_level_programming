@@ -52,7 +52,7 @@ class Square(Rectangle):
     """Public method"""
     def to_dictionary(self):
         """to_dictionary"""
-        return {'id': self.id, 'size': self.__size,
+        return {'id': self.id, 'size': self.size,
                 'x': self.x, 'y': self.y}
 
     """The __str__ Method"""
