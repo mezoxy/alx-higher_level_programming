@@ -59,4 +59,5 @@ class Square(Rectangle):
     """The __str__ Method"""
     def __str__(self):
         """Magic Method"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.size)
