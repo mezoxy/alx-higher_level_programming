@@ -50,3 +50,24 @@ class Test_Id(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             r1 = Rectangle(0, 2)
+
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(11, -2)
+
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(0.5, 2)
+
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(10, 0)
+
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(10, 4, -3)
+
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(10, 4, 3, -9)
+
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(10, 4, 3.4)
+
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(10, 4, 3, 4.7)
