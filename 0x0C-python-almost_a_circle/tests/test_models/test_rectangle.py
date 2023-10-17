@@ -35,3 +35,18 @@ class Test_Id(unittest.TestCase):
     def test_id_non_int(self):
         with self.assertRaises(TypeError):
             r1 = Rectangle("10", 2)
+
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(10, "2")
+
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(10, 4,"2")
+
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(10, 4, 3, "2")
+
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(-10, 2)
+
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(0, 2)
