@@ -31,3 +31,7 @@ class Test_Id(unittest.TestCase):
 
         r4 = Rectangle(10, 4, 1, 2, -98)
         self.assertEqual(r4.id, -98)
+
+    def test_id_non_int(self):
+        with self.assertRaises(TypeError):
+            r1 = Rectangle("10", 2)
