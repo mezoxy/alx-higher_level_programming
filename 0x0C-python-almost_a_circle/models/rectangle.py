@@ -74,10 +74,12 @@ class Rectangle(Base):
 
     """A public Method Area"""
     def area(self):
+        """area"""
         return self.__width * self.__height
 
     """A public method Display"""
     def display(self):
+        """dispay"""
         print("\n" * self.__y, end="")
         for i in range(self.__height):
             print(" " * self.__x, end="")
@@ -85,6 +87,7 @@ class Rectangle(Base):
 
     """The magic method __str__"""
     def __str__(self):
+        """The magic method __str__"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
 
