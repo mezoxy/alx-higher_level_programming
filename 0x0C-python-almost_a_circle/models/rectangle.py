@@ -105,4 +105,5 @@ class Rectangle(Base):
                 'y': self.__y,
                 'id': self.id,
                 'height': self.__height,
-                'width': self.__width}
+                'width': self.__width
+                }        
