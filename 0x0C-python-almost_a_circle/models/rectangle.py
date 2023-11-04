@@ -14,10 +14,12 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    """hi"""
     @property
     def x(self):
         return self.__x
 
+    """hi"""
     @property
     def y(self):
         return self.__y
@@ -81,6 +83,7 @@ class Rectangle(Base):
 
     """A public method Update"""
     def update(self, *args, **kwargs):
+        """update"""
         att = [
                 "id",
                 "width",
@@ -97,6 +100,7 @@ class Rectangle(Base):
 
     """A public method to_dictionary"""
     def to_dictionary(self):
+        """to_dictionary"""
         return {'x': self.__x,
                 'y': self.__y,
                 'id': self.id,
