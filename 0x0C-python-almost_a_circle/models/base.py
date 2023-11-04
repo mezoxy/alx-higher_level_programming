@@ -59,10 +59,11 @@ class Base:
             If the file does not exist - an empty list.
             list of instantiated classes.
         """
-        filename = str(cls.__name__) + ".json"
+        flname = "{}.json".format(cls.__name__)
         try:
-            with open(filename, "r") as jsonfile:
-                list_dicts = Base.from_json_string(jsonfile.read())
-                return [cls.create(**d) for d in list_dicts]
-        except IOError:
+            with open(flname, "r") as fl:
+                lst = from_json_string(load(fl))
+                for dic in lst:
+                    create(cls, **dic)
+        except Exception as e:
             return []
