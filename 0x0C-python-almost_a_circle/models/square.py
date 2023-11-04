@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """The module square"""
-
-
 from models.rectangle import Rectangle
 
 
