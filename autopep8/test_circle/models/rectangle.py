@@ -75,7 +75,7 @@ class Rectangle(Base):
     """The magic method __str__"""
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-                self.id, self.__x, self.__y, self.__width, self.__height)
+                self.id, self.x, self.y, self.width, self.height)
 
     """A public method Update"""
     def update(self, *args, **kwargs):
@@ -92,3 +92,11 @@ class Rectangle(Base):
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    """A public method to_dictionary"""
+    def to_dictionary(self):
+        return {'x': self.__x,
+                'y': self.__y,
+                'id': self.id,
+                'height': self.__height,
+                'width': self.__width}
