@@ -65,5 +65,5 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return lis
         for dic in loads(json_string):
-            lis.append(dumps(dic))
+            lis.append(dic)
         return lis
