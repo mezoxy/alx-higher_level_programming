@@ -67,3 +67,26 @@ class Base:
         for dic in loads(json_string):
             lis.append(dic)
         return lis
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(2, 2)
+        elif cls.__name__ == "Square":
+            dummy = cls(2)
+        cls.update(dummy, **dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        flname = str(cls.__name__) + ".json"
+        lis = []
+        try:
+            with open(flname, "r") as f:
+                js_string = f.read()
+                for dic in cls.from_json_string(js_string):
+                    obj = cls.create(**dic)
+                    lis.append(obj)
+                return lis
+        except IOError:
+            return []
