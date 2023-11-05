@@ -44,3 +44,8 @@ class Square(Rectangle):
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    """Public Method"""
+    def to_dictionary(self):
+        """eturns the dictionary representation of a Square"""
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
