@@ -51,12 +51,12 @@ class Base:
                     array.append(obj.to_dictionary())
                 string = cls.to_json_string(array)
                 f.write(string)
-    
+ 
     @staticmethod
     def from_json_string(json_string):
         """
         from_json_string:
-                            A static method  that returns the list of 
+                            A static method  that returns the list of
                             the JSON string representation
         Args:
             json_string:    A  string representing a list of dictionaries
