@@ -1,58 +1,33 @@
 #!/usr/bin/python3
-"""The module : square"""
-
-
+"""The module square"""
+from json import dumps, dump, loads, load
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """The Square class that inherits from the Rectangle class"""
-
+    """Class square that inherits from Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
-        """Constructor"""
-        Rectangle.__init__(self, width=size, height=size, x=x, y=y, id=id)
         self.size = size
+        super().__init__(size, size, x, y, id)
 
-    """Getter and Setter"""
     @property
     def size(self):
-        """Getter"""
         return self.width
 
-    """Set the width an height"""
     @size.setter
-    def size(self, size):
-        """Setter"""
-        if type(size) is not int:
-            raise TypeError("width must be an integer")
-        if size <= 0:
+    def size(self, val_s):
+        if type(val_s) is not int:
+            raise TypeError("width must be integer")
+        elif val_s <= 0:
             raise ValueError("width must be > 0")
-        self.width = size
-        self.height = size
-
-    """Public Method"""
-    def update(self, *args, **kwargs):
-        """update: Public Method
-        Args:
-            *args and kwargs
-        """
-        lis = ["id", "size", "x", "y"]
-
-        if args:
-            for i in range(min(len(lis), len(args))):
-                setattr(self, lis[i], args[i])
         else:
-            for key in kwargs:
-                setattr(self, key, kwargs[key])
+            self.width = val_s
+            self.height = val_s
 
-    """Public method"""
-    def to_dictionary(self):
-        """to_dictionary"""
-        return {'id': self.id, 'size': self.size,
-                'x': self.x, 'y': self.y}
-
-    """The __str__ Method"""
     def __str__(self):
-        """Magic Method"""
+        """
+            Magic method will return:
+            [Square] (<id>) <x>/<y> - <size>
+        """
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.size)
