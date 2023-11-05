@@ -51,7 +51,7 @@ class Base:
                     array.append(obj.to_dictionary())
                 string = cls.to_json_string(array)
                 f.write(string)
- 
+
     @staticmethod
     def from_json_string(json_string):
         """
