@@ -44,10 +44,10 @@ class Base:
         array = []
         string = ""
         with open(flname, "w") as f:
-            if list_objs is None or len(list_objs):
+            if list_objs is None:
                 f.write("[]")
             else:
                 for obj in list_objs:
                     array.append(obj.to_dictionary())
                 string = cls.to_json_string(array)
-            f.write(string)
+                f.write(string)
