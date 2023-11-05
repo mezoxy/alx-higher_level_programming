@@ -56,4 +56,4 @@ class Square(Rectangle):
             The dictionary contain:
                             id, size, x and y
         """
-        return {"id": self.id, "size": self.size, "x": self.__x, "y": self.__y}
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
