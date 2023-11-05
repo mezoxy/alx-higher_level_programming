@@ -35,16 +35,36 @@ class Rectangle(Base):
     """Set the value to each attributes"""
     @width.setter
     def width(self, val_w):
-        self.__width = val_w
+        if type(val_w) is not int:
+            raise TypeError("width must be an integer")
+        elif val_w <= 0:
+            raise ValueError("width must be > 0")
+        else:
+            self.__width = val_w
 
     @height.setter
     def height(self, val_h):
-        self.__height = val_h
+        if type(val_h) is not int:
+            raise TypeError("height must be an integer")
+        elif val_h <= 0:
+            raise ValueError("height must be > 0")
+        else:
+            self.__height = val_h
 
     @x.setter
     def x(self, val_x):
-        self.__x = val_x
+        if type(val_x) is not int:
+            raise TypeError("x must be an integer")
+        elif val_x < 0:
+            raise ValueError("x must be >= 0")
+        else:
+            self.__x = val_x
 
     @y.setter
     def y(self, val_y):
-        self.__y = val_y
+        if type(val_y) is not int:
+            raise TypeError("y must be an integer")
+        elif val_y < 0:
+            raise ValueError("y must be >= 0")
+        else:
+            self.__y = val_y
