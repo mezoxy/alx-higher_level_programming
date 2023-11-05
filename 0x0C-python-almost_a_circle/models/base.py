@@ -60,10 +60,13 @@ class Base:
             list of instantiated classes.
         """
         flname = "{}.json".format(cls.__name__)
+        new = []
         try:
             with open(flname, "r") as fl:
                 lst = from_json_string(load(fl))
                 for dic in lst:
-                    create(cls, **dic)
+                    obj = create(cls, **dic)
+                    new.append(obj)
+                return new
         except Exception as e:
             return []
