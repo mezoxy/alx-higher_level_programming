@@ -51,3 +51,19 @@ class Base:
                     array.append(obj.to_dictionary())
                 string = cls.to_json_string(array)
                 f.write(string)
+    
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        from_json_string:
+                            A static method  that returns the list of 
+                            the JSON string representation
+        Args:
+            json_string:    A  string representing a list of dictionaries
+        """
+        lis = []
+        if json_string is None or len(json_string) == 0:
+            return lis
+        for dic in loads(json_string):
+            lis.append(dumps(dic))
+        return lis
