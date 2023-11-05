@@ -1,119 +1,50 @@
 #!/usr/bin/python3
-"""The module rectangle"""
-
-
+"""the module ractangle"""
+from json import dumps, dump, loads, load
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class"""
+    """class Rectangle that inherits from Base
+        private instance width height x and y
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """constructor"""
         self.width = width
         self.height = height
-        self.x = x
+        self.x =x
         self.y = y
         super().__init__(id)
 
-    """Getter"""
-    @property
-    def x(self):
-        return self.__x
-
-    """Getter"""
-    @property
-    def y(self):
-        return self.__y
-
-    """Getter"""
+    """Getter and stter for each attributtes except id"""
     @property
     def width(self):
         return self.__width
 
-    """Getter"""
     @property
     def height(self):
         return self.__height
 
-    """Setter"""
-    @x.setter
-    def x(self, val_x):
-        if type(val_x) is not int:
-            raise TypeError("x must be an integer")
-        elif val_x < 0:
-            raise ValueError("x must be >= 0")
-        else:
-            self.__x = val_x
+    @property
+    def x(self):
+        return self.__x
 
-    """Setter"""
-    @y.setter
-    def y(self, val_y):
-        if type(val_y) is not int:
-            raise TypeError("y must be an integer")
-        elif val_y < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = val_y
+    @property
+    def y(self):
+        return self.__y
 
-    """Setter"""
+    """Set the value to each attributes"""
     @width.setter
-    def width(self, val_wi):
-        if type(val_wi) is not int:
-            raise TypeError("width must be an integer")
-        elif val_wi <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = val_wi
+    def width(self, val_w):
+        self.__width = val_w
 
-    """Setter"""
     @height.setter
     def height(self, val_h):
-        if type(val_h) is not int:
-            raise TypeError("height must be an integer")
-        elif val_h <= 0:
-            raise ValueError("height must be > 0")
         self.__height = val_h
 
-    """A public Method Area"""
-    def area(self):
-        """area"""
-        return self.__width * self.__height
+    @x.setter
+    def x(self, val_x):
+        self.__x = val_x
 
-    """A public method Display"""
-    def display(self):
-        """dispay"""
-        print("\n" * self.__y, end="")
-        for i in range(self.__height):
-            print(" " * self.__x, end="")
-            print("#" * self.__width)
-
-    """The magic method __str__"""
-    def __str__(self):
-        """The magic method __str__"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-                self.id, self.x, self.y, self.width, self.height)
-
-    """A public method Update"""
-    def update(self, *args, **kwargs):
-        """update"""
-        att = [
-                "id",
-                "width",
-                "height",
-                "x",
-                "y"
-                ]
-        if args:
-            for i in range(min(len(att), len(args))):
-                setattr(self, att[i], int(args[i]))
-        else:
-            for key in kwargs:
-                setattr(self, key, kwargs[key])
-
-    """A public method to_dictionary"""
-    def to_dictionary(self):
-        """to_dictionary"""
-        return {'x': self.__x,
-                'y': self.__y,
-                'id': self.id,
-                'height': self.__height,
-                'width': self.__width
-                }        
+    @y.setter
+    def y(self, val_y):
+        self.__y = val_y
