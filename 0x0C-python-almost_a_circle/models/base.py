@@ -2,7 +2,7 @@
 """The module: base"""
 
 
-json import dumps, dump, loads, load
+from json import dumps, dump, loads, load
 
 
 class Base:
