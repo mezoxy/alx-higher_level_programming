@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """The module: base"""
+
+
 json import dumps, dump, loads, load
 
 
 class Base:
     """A Base class: First class"""
-
     __nb_objects = 0
     """The Constructor"""
     def __init__(self, id=None):
