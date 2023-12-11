@@ -1,6 +1,6 @@
 #!/usr/bin/node
-if (argv[2] == null) {
-	consle.log('No argument');
+if (process.argv[2] == null) {
+  console.log('No argument');
 } else {
-	 consle.log(argv[2]);
+  console.log(process.argv[2]);
 }
