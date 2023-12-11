@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function add (a, b) {
+function add (a, b){
   if (a == null || b == null) {
     return ('NaN');
   } else {
