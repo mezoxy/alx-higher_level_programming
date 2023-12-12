@@ -8,9 +8,5 @@ if (process.argv.length <= 3) {
     arr[i] = parseInt(process.argv[i + 2]);
   }
   arr.sort();
-  if (arr.length > 2) {
-    console.log(arr[arr.length - 2]);
-  } else {
-    console.log(arr[arr.length - 1]);
-  }
+  console.log(arr[arr.length - 2]);
 }
