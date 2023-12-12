@@ -7,6 +7,6 @@ if (process.argv.length <= 3) {
   for (let i = 0; i < process.argv.length - 2; i++) {
     arr[i] = parseInt(process.argv[i + 2]);
   }
-  arr.sort();
-  console.log(arr[arr.length - 2]);
+  arr.sort((a, b) => b - a);
+  console.log(arr[1]);
 }
