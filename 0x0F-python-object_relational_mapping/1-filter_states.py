@@ -15,15 +15,11 @@ if __name__ == '__main__':
             )
 
     cur = db.cursor()
-    target = 'N%'
 
-    cur.execute("""SELECT * FROM states
-            WHERE NAME LIKE %s""", (target,))
+    cur.execute("""SELECT * FROM states WHERE name LIKE 'N%'""")
 
     rows = cur.fetchall()
-    if rows:
-        for row in rows:
-            print(row)
 
-    cur.close()
-    db.close()
+    for row in rows:
+        print(row)
+
