@@ -2,6 +2,7 @@
 """module: 9-model_state_filter_a"""
 
 
+import re
 from model_state import Base, State
 from sqlalchemy import create_engine as eng
 import sys
@@ -15,7 +16,9 @@ if __name__ == '__main__':
     session = Session()
 
     tabl = session.query(State)
+    pattern = r".*a.*"
     for row in tabl:
-        print("{}: {}".format(row.id, row.name))
+        if re.match(pattern, row.name):
+            print("{}: {}".format(row.id, row.name))
 
     session.close()
