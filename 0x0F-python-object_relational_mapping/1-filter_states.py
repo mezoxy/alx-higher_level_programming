@@ -21,5 +21,6 @@ if __name__ == '__main__':
             WHERE NAME LIKE %s""", (target,))
 
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    if rows:
+        for row in rows:
+            print(row)
