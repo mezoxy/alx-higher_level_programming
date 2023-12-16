@@ -15,7 +15,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=eng)
     session = Session()
 
-    lst = session.query(State).filter(State.id == 1)
-    print("{}: {}".format(lst[0].id, lst[0].name))
+    lst = session.query(State.id, State.name).filter(State.id == 1)
+    print("{}: {}".format(lst[0][0], lst[0][1]))
 
     session.close()
