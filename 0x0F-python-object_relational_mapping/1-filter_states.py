@@ -16,10 +16,11 @@ if __name__ == '__main__':
 
     cur = db.cursor()
 
-    cur.execute("""SELECT * FROM states WHERE name LIKE 'N%'""")
+    cur.execute("""SELECT * FROM states""")
 
     rows = cur.fetchall()
 
     for row in rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
