@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""module: 5-filter_cities"""
+
 
 import MySQLdb
 import sys
