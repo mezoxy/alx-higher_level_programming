@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""modue: 0-select_states"""
+"""module: 1-filter_states"""
 
 
 import sys
@@ -15,7 +15,10 @@ if __name__ == '__main__':
             )
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states")
+    target = 'N%'
+
+    cur.execute("""SELECT * FROM states
+            WHERE NAME LIKE %s""", (target,))
 
     rows = cur.fetchall()
     for row in rows:
