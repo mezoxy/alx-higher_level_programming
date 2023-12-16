@@ -18,7 +18,7 @@ if __name__ == '__main__':
     target = sys.argv[4].split("'")
     tabl = session.query(State.id).filter(State.name == target[0])
     if tabl:
-        print("{}".format(tabl[0][0]))
+        print("{}".format(tabl.id))
     else:
         print("Not found")
 
