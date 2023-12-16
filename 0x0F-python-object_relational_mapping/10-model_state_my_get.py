@@ -15,10 +15,11 @@ if __name__ == '__main__':
     Session = se(bind=conect)
     session = Session()
 
-    target = sys.argv[4].split("'")
-    tabl = session.query(State.id).filter(State.name == target[0])
-    if tabl:
-        print("{}".format(tabl.id))
+    target = sys.argv[4].split("'")[0]
+    tabl = session.query(State.id).filter(State.name == target)
+
+    if tabl.first():
+        print("{}".format(tabl.first()[0]))
     else:
         print("Not found")
 
