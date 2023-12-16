@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     target = sys.argv[4]
-    command = "SELECT * FROM states WHERE NAME LIKE '{}'".format(target)
+    command = "SELECT * FROM states WHERE name = '{}'".format(target)
     cur.execute(command)
 
     rows = cur.fetchall()
