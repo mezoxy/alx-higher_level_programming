@@ -15,7 +15,8 @@ if __name__ == '__main__':
     Session = se(bind=conect)
     session = Session()
 
-    tabl = session.query(State.id).filter(State.name == sys.argv[4])
+    target = sys.argv[4].split("'")
+    tabl = session.query(State.id).filter(State.name == target[0])
     if tabl:
         print("{}".format(tabl[0][0]))
     else:
