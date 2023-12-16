@@ -24,3 +24,6 @@ if __name__ == '__main__':
     if rows:
         for row in rows:
             print(row)
+
+    cur.close()
+    db.close()
