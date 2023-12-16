@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""module: 4-cities_by_state"""
+
 
 import MySQLdb
 import sys
