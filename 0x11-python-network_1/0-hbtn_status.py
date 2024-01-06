@@ -10,4 +10,7 @@ with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
     print("Body response:")
     print("\t- type:", type(html))
     print("\t- content:", html)
-    print("\t- utf8 content: OK")
+    if response.headers.get_content_charset() == 'utf-8':
+        print("\t- utf8 content: OK")
+    else:
+        print("\t- utf8 content: NO")
