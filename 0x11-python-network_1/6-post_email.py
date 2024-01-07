@@ -10,4 +10,3 @@ if __name__ == '__main__':
     inf = {'email': sys.argv[2]}
     res = requests.post(sys.argv[1], data=inf)
     print(res.text)
-
