@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 
-import requests
+import requests, sys
 
-print(dir(requests))
+print(len(sys.argv))
