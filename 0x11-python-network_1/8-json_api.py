@@ -14,7 +14,8 @@ if __name__ == '__main__':
         res = requests.post(url, data={'q': ""})
     try:
         if len(res.json()) != 0:
-            print("[{}] {}".format(res.json().get('id'), res.json().get('name')))
+            print("[{}] {}".format(
+                res.json().get('id'), res.json().get('name')))
         else:
             print("No result")
     except Exception:
