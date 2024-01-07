@@ -2,8 +2,8 @@
 '''The module: 1-hbtn_header'''
 
 
-import urllib.request as req
+import urllib.request
 import sys
 
-with req.urlopen(sys.argv[1]) as resp:
+with urllib.request.urlopen(sys.argv[1]) as resp:
     print(resp.headers['X-Request-Id'])
