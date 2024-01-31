@@ -7,7 +7,8 @@ request(process.argv[2], function (error, response, body) {
     console.log('Error accured');
   } else {
     const data = JSON.parse(body);
-    const ur = data.results.characters[17];
+    const url = "https://swapi-api.alx-tools.com/api/people/18/";
+    const ur = data.results[0].characters[url];
     request(ur, function (error, response, body) {
       if (error) {
 	console.log('Error accured');
