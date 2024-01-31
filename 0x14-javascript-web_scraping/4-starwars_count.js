@@ -8,9 +8,9 @@ request(process.argv[2], function (error, response, body) {
 		let num = 0;
 		const lis = JSON.parse(body).results;
 		for (let item in lis) {
-			if (item.hasOwnPropert("characters")) {
-				for (let ur in item["characters"]) {
-					if (ur == "https://swapi-api.alx-tools.com/api/people/18/") {
+			if (lis[item].hasOwnPropert("characters")) {
+				for (let ur in lis[item]["characters"]) {
+					if (lis[item]["characters"][ur] === "https://swapi-api.alx-tools.com/api/people/18/") {
 						num++;
 					}
 				}
