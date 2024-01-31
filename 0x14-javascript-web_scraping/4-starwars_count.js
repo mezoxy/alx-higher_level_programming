@@ -8,7 +8,7 @@ request(process.argv[2], function (error, response, body) {
     let num = 0;
     const lis = JSON.parse(body).results;
     for (const item in lis) {
-      if (lis[item].hasOwnProperty('characters')) {
+      if (lis[item].characters) {
         for (const ur in lis[item].characters) {
           if (lis[item].characters[ur] === 'https://swapi-api.alx-tools.com/api/people/18/') {
             num++;
