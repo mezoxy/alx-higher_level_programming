@@ -10,7 +10,7 @@ request(process.argv[2], function (error, response, body) {
     for (const item in lis) {
       if (lis[item].characters) {
         for (const ur in lis[item].characters) {
-          if (lis[item].characters[ur] === 'https://swapi-api.alx-tools.com/api/people/18/') {
+          if (lis[item].characters[ur] === 'https://swapi-api.alx-tools.com/api/people/18/' || lis[item].characters[ur] === 'http://swapi-api.alx-tools.com/api/people/18/') {
             num++;
           }
         }
