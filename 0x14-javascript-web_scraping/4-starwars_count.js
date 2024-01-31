@@ -7,7 +7,7 @@ request(process.argv[2], function (error, response, body) {
     console.log('Error accured');
   } else {
     const data = JSON.parse(body);
-    const ur = data.characters[17];
+    const ur = data.results.characters[17];
     request(ur, function (error, response, body) {
       if (error) {
 	console.log('Error accured');
