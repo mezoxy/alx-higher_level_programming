@@ -1,6 +1,1 @@
-Command line arguments: [
-  '/usr/bin/node',
-  '/alx-higher_level_programming/0x14-javascript-web_scraping/0-readme.js',
-  'gsdfg',
-  'dfgsdfgsfgfgfs'
-]
+Hi fgfgfgef
