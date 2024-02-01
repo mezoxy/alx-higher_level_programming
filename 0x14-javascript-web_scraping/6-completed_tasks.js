@@ -1,30 +1,39 @@
 #!/usr/bin/node
-const req = require('request');
 
-req(process.argv[2], function (err, response, body) {
-  if (err) {
-    console.log('ERROR!!');
+const request = require('request');
+
+request(process.argv[2], function (error, response, body) {
+  if (error) {
+    console.log('ERROR!!', error.message);
   } else {
-    const dic = {};
-    let NumTask = 0;
+    const userTaskCount = {};
+    let numTasks = 0;
+
     const tasks = JSON.parse(body);
-    let UsrId = tasks[0].userId;
+
+    let currentUserId = tasks[0].userId;
+
     for (const task of tasks) {
-	    if (task.userId === UsrId) {
-		    if (task.completed === true) {
-			    NumTask += 1;
-		    }
-	    } else {
-		    dic[UsrId] = NumTask;
-		    if (task.completed === true) {
-			    NumTask = 1;
-		    } else {
-			    NumTask = 0;
-		    }
-		    UsrId = task.userId;
-	    }
+      if (task.userId === currentUserId) {
+        if (task.completed) {
+          numTasks += 1;
+        }
+      } else {
+        userTaskCount[currentUserId] = numTasks;
+
+        if (task.completed) {
+          numTasks = 1;
+        } else {
+          numTasks = 0;
+        }
+
+        currentUserId = task.userId;
+      }
     }
-    dic[UsrId] = NumTask;
-    console.log(dic);
+
+    // Include the count for the last user
+    userTaskCount[currentUserId] = numTasks;
+
+    console.log(userTaskCount);
   }
 });
