@@ -1,2 +1,8 @@
 #!/usr/bin/node
-console.log('X' * 4);
+
+function myFunction(a) {
+	    console.log(a);
+}
+
+const a = 12;
+myFunction(89);
